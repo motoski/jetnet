@@ -10,6 +10,7 @@ var init = function(argv, keyboard, print, connected, quit) {
     client.on("data", print);
     client.on("close", quit);
     process.stdin.resume();
+    process.stdin.setRawMode(true);
     process.stdin.setEncoding("utf-8");
     process.stdin.on("data", keyboard);
 };
@@ -18,12 +19,12 @@ var print = function(text) {
     process.stdout.write(text);
 };
 
-var keyboard = function(text) {
-    client.write(text.trim() + "\n");
+var keyboard = function(key) {
+    client.write(key);
 };
 
 var connected = function() {
-    print("connected\r\n");
+    // -
 };
 
 var quit = function() {
