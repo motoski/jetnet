@@ -29,6 +29,7 @@ var error = function(e) {
 };
 
 var quit = function() {
+    print("\n");
     process.exit();
 };
 
