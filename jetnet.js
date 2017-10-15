@@ -45,7 +45,7 @@ var argParser = function(arg) {
     else if(arg.startsWith("host:")) hostName = arg.split(":")[1];
     else if (arg.startsWith("port:")) port = parseInt(arg.split(":")[1]);
     else if (arg.startsWith("charSet:")) charSet = arg.split(":")[1];
-}
+};
 
 var checkVars = function() {
     if (hostName == null ||
@@ -53,6 +53,6 @@ var checkVars = function() {
       print("\nNEVER RUN FOREIGN CODE WITHOUT FIRST READING IT\n");
       quit();
     }
-}
+};
 
 init(print, error, quit, argv, keyboard, argParser);
